@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav >
+        <a href="allposts">Tout les posts</a>
+        <a href="ajoutblog">Ajouter un nouveau blog</a>
+    </nav>
+    <% data.forEach(blog => {%>
+        <h1><%= blog.sujet %></h1>
+        <h1><%= blog._id %></h1>
+
+        <h2><%= blog._id %></h2>
+        <h2><%= blog.auteur %></h2>
+
+        <h3><%= blog._id %></h3>
+
+        <h3><%= blog.description %></h3>
+
+        <h4><%= blog._id %></h4>
+
+        <h4> <%= blog.message %></h4>
+        <a href="/blog/<%= blog._id %>">Cliquez ici pour editer le blog</a>
+       
+    <%}) %>
+    
+</body>
+</html>

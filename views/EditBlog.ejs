@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page Edit</h1>
+    <%= data %>
+
+    <form action="/updateblog/<%= data._id %>?_method=PUT" method="post">
+
+        <label for="sujet">Sujet :</label>
+        <input type="text" name="sujet" value="<%= data.sujet %>">
+        <label for="auteur">Auteur :</label>
+        <input type="text" name="auteur" value="<%= data.auteur %>">
+        <label for="description">Description :</label>
+        <input type="text" name="description" value="<%= data.message %>">
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+
+        <input type="submit" value="Editer la donnée">
+    </form>
+
+    <form action="/deleteblog/<%= data._id %>?_method=DELETE" method="post">
+
+        <input type="submit" value="Supprimer le blog">
+    </form>
+    
+</body>
+</html>

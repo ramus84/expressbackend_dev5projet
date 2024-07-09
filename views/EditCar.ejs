@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=%, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%= data %>
+
+    <form action="updatecar/<%= data._id %>?_method=PUT" method="post">
+
+        <label for="marque">Marque :</label>
+        <input type="text" id="marque" name="marque" value="<%= data.marque %>">
+
+        <label for="modele">Modèle :</label>
+        <input type="text" id="modele" name="modele" value="<%= data.modele %>">
+
+        <label for="annee">Année :</label>
+        <input type="text" id="annee" name="annee" value="<%=data.annee %>">
+
+        <label for="prix">Prix :</label>
+        <input type="text" id="prix" name="prix" value="<%= data.prix %>">
+
+        <label for="couleur">Couleur :</label>
+        <input type="text" id="couleur" name="couleur" value="<%= data.couleur %>">
+        
+        <label for="description">Description :</label>
+        <textarea id="description" name="description"><% =data.description %></textarea>
+
+        <input type="submit" value="Modifier la nouvelle voiture">
+
+    </form>
+     
+    <form action="/deletecar/<%= data._id %>?_method=DELETE" method="post" >
+        <input type="submit" value="Supprimer la voiture">
+    </form>
+</body>
+</html>
